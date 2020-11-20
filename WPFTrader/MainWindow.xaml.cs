@@ -22,34 +22,45 @@ namespace WPFTrader
     /// </summary>
     public partial class MainWindow : Window
     {
+        GstBdd ungstbdd;
+
         public MainWindow()
         {
+            
             InitializeComponent();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            GstBdd = new GestionnaireBDD();
+            ungstbdd = new GstBdd();
         }
 
         private void lstTraders_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if(lstTraders.SelectedItem != null)
+            {
+                lstTraders.ItemsSource = 
+            }
+            
         }
 
         private void lstActions_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            if(lstActions.SelectedItem != null)
+            {
+                lstActions.ItemsSource = GstBdd.Equals(lstActions.ItemsSource)
+            }
         }
 
         private void btnVendre_Click(object sender, RoutedEventArgs e)
         {
-
+            
         }
 
         private void btnAcheter_Click(object sender, RoutedEventArgs e)
         {
-
+            newAcheter frm = new newAcheter(GstBdd);
+            frm.Show();
         }
     }
 }

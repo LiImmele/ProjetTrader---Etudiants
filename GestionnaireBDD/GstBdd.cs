@@ -61,7 +61,7 @@ namespace GestionnaireBDD
 
         public void UpdateQuantite(int numAction, int numTrader, int quantite)
         {
-            cmd = new MySqlCommand("")
+            cmd = new MySqlCommand("select count(*) from acheter where 'prixAchat'= (" + numAction + ", " + numTrader + ",'" + quantite + "')", cnx);
         }
 
         public double getCoursReel(int numAction)
@@ -72,10 +72,11 @@ namespace GestionnaireBDD
         }
         public void AcheterAction(int numAction, int numTrader, double prix, int quantite)
         {
-
+            
         }
         public double getTotalPortefeuille(int numTrader)
         {
+            cmd = new MySqlCommand("SELECT sum(prixAchat + quantite) FROM acheter;", cnx);
             return 0;
         }
     }
