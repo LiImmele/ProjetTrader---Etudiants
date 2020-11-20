@@ -61,7 +61,7 @@ namespace GestionnaireBDD
 
         public void UpdateQuantite(int numAction, int numTrader, int quantite)
         {
-            
+            cmd = new MySqlCommand("")
         }
 
         public double getCoursReel(int numAction)

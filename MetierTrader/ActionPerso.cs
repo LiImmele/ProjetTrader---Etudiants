@@ -6,19 +6,21 @@ namespace MetierTrader
 {
     public class ActionPerso
     {
-        private int numActionPerso;
-        private string nomActionPerso;
+        private int prixAchat;
+        private int quantite;
+        private int total;
         private List<Action> lesActions;
 
-        public ActionPerso(int unNumPerso, string unNomPerso)
+        public ActionPerso(int unprixAchat, int uneQuantite, int unTotal)
         {
-            NumActionPerso = unNumPerso;
-            NomActionPerso = unNomPerso;
+            PrixAchat = unprixAchat;
+            Quantite = uneQuantite;
+            Total = unTotal;
             LesActions = new List<Action>();
         }
-
-        public int NumActionPerso { get => numActionPerso; set => numActionPerso = value; }
-        public string NomActionPerso { get => nomActionPerso; set => nomActionPerso = value; }
         public List<Action> LesActions { get => lesActions; set => lesActions = value; }
+        public int PrixAchat { get => prixAchat; set => prixAchat = value; }
+        public int Quantite { get => quantite; set => quantite = value; }
+        public int Total { get => total; set => total = value; }
     }
 }
